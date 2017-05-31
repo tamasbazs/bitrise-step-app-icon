@@ -9,8 +9,8 @@ if [ -z "${project_path}" ]; then
   exit 1
 fi
 
-if [ -z "${new_bundle_identifier}" ]; then
-  echo "[ERROR] Missing required input: new_bundle_identifier"
+if [ -z "${new_icon_name}" ]; then
+  echo "[ERROR] Missing required input: new_icon_name"
   exit 1
 fi
 
@@ -23,11 +23,11 @@ fi
 
 # Info statements
 echo "[INFO] Path of .xcodeproj file:		${project_path}"
-echo "[INFO] New Bundle Identifier: 		${new_bundle_identifier}"
+echo "[INFO] New Icon: 		${new_icon_name}"
 
-# Replaces the setting PRODUCT_BUNDLE_IDENTIFIER in the .pbxproj file.
+# Replaces the setting ASSETCATALOG_COMPILER_APPICON_NAME in the .pbxproj file.
 echo ""
 echo "Replacing..."
-sed -i "" "s/\(PRODUCT_BUNDLE_IDENTIFIER = \).*\(;\)/\1${new_bundle_identifier}\2/" $PBXPROJ_FILE
+sed -i "" "s/\(ASSETCATALOG_COMPILER_APPICON_NAME = \).*\(;\)/\1${new_icon_name}\2/" $PBXPROJ_FILE
 echo ""
 echo "[SUCCESS] Replace done!"
