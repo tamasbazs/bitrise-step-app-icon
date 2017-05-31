@@ -16,7 +16,7 @@ workflows:
         - path: ./_tmp
         - is_create_path: true
     - path::./:
-        title: Replace Xcode PRODUCT_BUNDLE_IDENTIFIER.
+        title: Replace Xcode ASSETCATALOG_COMPILER_APPICON_NAME.
         inputs:
         - project_path: "./BitriseStepTest/BitriseStepTest.xcodeproj"
         - new_bundle_identifier: "com.mnm.BitriseTest_NEW"
@@ -35,10 +35,10 @@ workflows:
   share-this-step:
     envs:
       # if you want to share this step into a StepLib
-      - MY_STEPLIB_REPO_FORK_GIT_URL: https://github.com/emenegro/bitrise-step-product-bundle-identifier
-      - STEP_ID_IN_STEPLIB: set-ios-product-bundle-identifier.git
+      - MY_STEPLIB_REPO_FORK_GIT_URL: https://github.com/Q42/bitrise-step-app-icon
+      - STEP_ID_IN_STEPLIB: bitrise-step-app-icon.git
       - STEP_GIT_VERION_TAG_TO_SHARE: 1.0.1
-      - STEP_GIT_CLONE_URL: https://github.com/emenegro/bitrise-step-product-bundle-identifier
+      - STEP_GIT_CLONE_URL: https://github.com/Q42/bitrise-step-app-icon
     description: |-
       If this is the first time you try to share a Step you should
       first call: $ bitrise share
