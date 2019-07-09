@@ -3,6 +3,8 @@
 # fail if any commands fails
 set -e
 
+set -x
+
 # Exists if no provided parameters.
 if [ -z "${project_path}" ]; then
   echo "[ERROR] Missing required input: project_path"
